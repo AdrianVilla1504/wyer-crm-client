@@ -1,6 +1,11 @@
 import React from "react";
 
 const ContactHomeCard = ({ client }) => {
+
+  const handleClick = () => {
+    console.log("si funciona clickeando el boton donde sea")
+  }
+
   return (
     <>
       <div className="flex flex-col items-center justify-center">
@@ -13,7 +18,7 @@ const ContactHomeCard = ({ client }) => {
               <div className="text-[#186F9A] text-sm">(+57) {client.phone}</div>
             </div>
             <div className="flex flex-row justify-end">
-              <button className="w-[30px] ml-[0px] text-right flex justify-end">
+              <button className="w-[30px] ml-[0px] text-right flex justify-end " onClick={handleClick}>
                 <img
                   className="w-[15px]"
                   src="https://res.cloudinary.com/dkagy4g5m/image/upload/v1667407207/wyer/edit_home_itr62p.png"
