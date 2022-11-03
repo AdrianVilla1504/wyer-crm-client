@@ -1,11 +1,11 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 
 import InputSearchClient from "../../components/InputSearchClient";
 import ContacListSection from "../../components/ContactListSection";
 import ContactFooter from "../../components/ContactFooter";
 
 
-const HomeClientList = () => {
+const HomeContactList = () => {
 
   const [renderClients, setRenderClients] = useState();
 
@@ -29,4 +29,4 @@ const HomeClientList = () => {
   );
 };
 
-export default HomeClientList;
+export default HomeContactList;

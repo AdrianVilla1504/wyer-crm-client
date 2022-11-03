@@ -8,3 +8,20 @@ export async function getClients() {
     return new Error(error);
   }
 }
+
+export async function createCLients(clientForBody) {
+  try {
+      const options = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(clientForBody),
+      };
+      const response = await fetch(`${BASE_URL}/api/clients`, options);
+      return response.json();
+
+  }  catch (error) {
+    return new Error(error);
+  }
+}
