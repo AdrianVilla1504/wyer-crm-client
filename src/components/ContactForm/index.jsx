@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-const ContactForm = ({ handlerSubmit, handleChange }) => {
-
+const ContactForm = ({ edit, contact, handlerSubmit, handleChange }) => {
   const [inputDate, setInputDate] = useState(false);
 
   const handleDateType = (e) => {
@@ -14,52 +13,101 @@ const ContactForm = ({ handlerSubmit, handleChange }) => {
     <div>
       <form action="#" method="POST" onSubmit={handlerSubmit}>
         <div className="w-[90vw] lg:w-[80vw] h-[67vh] py-[20px] lg:mt-[4vh] container flex flex-col mx-auto items-center justify-between bg-[#F6F6F6] rounded-[33px] relative">
-          <input
-            type="text"
-            id="name-input"
-            name="name"
-            required
-            className="rounded-[60px] h-[42px] border-none flex appearance-none border border-gray-300 w-[87%] py-2 px-7 pb-[10px] bg-white text-gray-700 placeholder-gray-400 text-base focus:outline-none focus:ring-2 focus:ring-[#006191] focus:border-transparent"
-            placeholder="Nombres"
-            onChange={handleChange}
-          />
-          <input
-            type="text"
-            id="lastName-input"
-            name="lastName"
-            required
-            className="rounded-[60px] h-[42px] border-none flex appearance-none border border-gray-300 w-[87%] py-2 px-7 pb-[10px] bg-white text-gray-700 placeholder-gray-400 text-base focus:outline-none focus:ring-2 focus:ring-[#006191] focus:border-transparent"
-            placeholder="Apellidos"
-            onChange={handleChange}
-          />
-          <input
-            type="email"
-            id="email-input"
-            name="email"
-            autocomplete="email"
-            required
-            className="rounded-[60px] h-[42px] border-none flex appearance-none border border-gray-300 w-[87%] py-2 px-7 pb-[10px] bg-white text-gray-700 placeholder-gray-400 text-base focus:outline-none focus:ring-2 focus:ring-[#006191] focus:border-transparent"
-            placeholder="E-mail"
-            onChange={handleChange}
-          />
-          <input
-            type="tel"
-            id="phone-input"
-            name="phone"
-            autocomplete="email"
-            required
-            className="rounded-[60px] h-[42px] border-none flex appearance-none border border-gray-300 w-[87%] py-2 px-7 pb-[10px] bg-white text-gray-700 placeholder-gray-400 text-base focus:outline-none focus:ring-2 focus:ring-[#006191] focus:border-transparent"
-            placeholder="Telefono"
-            onChange={handleChange}
-          />
+          <div className="relative flex flex-col items-center w-full">
+            <input
+              type="text"
+              id="name-input"
+              name="name"
+              required
+              className="rounded-[60px] h-[42px] border-none flex appearance-none border border-gray-300 w-[87%] py-2 px-7 pb-[10px] bg-white text-gray-700 placeholder-gray-400 text-base focus:outline-none focus:ring-2 focus:ring-[#006191] focus:border-transparent"
+              placeholder={edit ? contact.name : "Nombre"}
+              onChange={handleChange}
+            />
+            <div className="absolute top-3 right-3 lg:top-10 lg:right-[5vh] transform -translate-y-0 pr-9 pointer-events-none">
+              <button className="0" onClick={handleDateType}>
+                <img
+                  className="w-[20px]"
+                  src="https://res.cloudinary.com/dkagy4g5m/image/upload/v1667407207/wyer/edit_home_itr62p.png"
+                  alt="edit_input_icon"
+                />
+              </button>
+            </div>
+          </div>
+          <div className="relative flex flex-col items-center w-full">
+            <input
+              type="text"
+              id="lastName-input"
+              name="lastName"
+              required
+              className="rounded-[60px] h-[42px] border-none flex appearance-none border border-gray-300 w-[87%] py-2 px-7 pb-[10px] bg-white text-gray-700 placeholder-gray-400 text-base focus:outline-none focus:ring-2 focus:ring-[#006191] focus:border-transparent"
+              placeholder={edit ? contact.lastName : "Apellidos"}
+              onChange={handleChange}
+            />
+            <div className="absolute top-3 right-3 lg:top-10 lg:right-[5vh] transform -translate-y-0 pr-9 pointer-events-none">
+              <button className="0" onClick={handleDateType}>
+                <img
+                  className="w-[20px]"
+                  src="https://res.cloudinary.com/dkagy4g5m/image/upload/v1667407207/wyer/edit_home_itr62p.png"
+                  alt="edit_input_icon"
+                />
+              </button>
+            </div>
+          </div>
+          <div className="relative flex flex-col items-center w-full">
+            <input
+              type="email"
+              id="email-input"
+              name="email"
+              autocomplete="email"
+              required
+              className="rounded-[60px] h-[42px] border-none flex appearance-none border border-gray-300 w-[87%] py-2 px-7 pb-[10px] bg-white text-gray-700 placeholder-gray-400 text-base focus:outline-none focus:ring-2 focus:ring-[#006191] focus:border-transparent"
+              placeholder={edit ? contact.email : "E-mail"}
+              onChange={handleChange}
+            />
+            <div className="absolute top-3 right-3 lg:top-10 lg:right-[5vh] transform -translate-y-0 pr-9 pointer-events-none">
+              <button className="0" onClick={handleDateType}>
+                <img
+                  className="w-[20px]"
+                  src="https://res.cloudinary.com/dkagy4g5m/image/upload/v1667407207/wyer/edit_home_itr62p.png"
+                  alt="edit_input_icon"
+                />
+              </button>
+            </div>
+          </div>
+          <div className="relative flex flex-col items-center w-full">
+            <input
+              type="tel"
+              id="phone-input"
+              name="phone"
+              autocomplete="email"
+              required
+              className="rounded-[60px] h-[42px] border-none flex appearance-none border border-gray-300 w-[87%] py-2 px-7 pb-[10px] bg-white text-gray-700 placeholder-gray-400 text-base focus:outline-none focus:ring-2 focus:ring-[#006191] focus:border-transparent"
+              placeholder={edit ? contact.phone : "Telefono"}
+              onChange={handleChange}
+            />
+            <div className="absolute top-3 right-3 lg:top-10 lg:right-[5vh] transform -translate-y-0 pr-9 pointer-events-none">
+              <button className="0" onClick={handleDateType}>
+                <img
+                  className="w-[20px]"
+                  src="https://res.cloudinary.com/dkagy4g5m/image/upload/v1667407207/wyer/edit_home_itr62p.png"
+                  alt="edit_input_icon"
+                />
+              </button>
+            </div>
+          </div>
           {!inputDate ? (
             <div className="relative flex flex-col items-center w-full">
               <input
                 type="text"
                 id="birhday-input"
                 name="birthDate"
+                required
                 className="rounded-[60px] h-[42px] border-none flex appearance-none border border-gray-300 w-[87%] py-2 px-7 pb-[10px] bg-white text-gray-700 placeholder-gray-400 text-base focus:outline-none focus:ring-2 focus:ring-[#006191] focus:border-transparent"
-                placeholder="Fecha de nacimiento"
+                placeholder={
+                  edit
+                    ? contact.birthDate?.split("").splice(0, 10).join("")
+                    : "Fecha de nacimiento"
+                }
                 onChange={handleChange}
                 onClick={handleDateType}
               />
@@ -85,16 +133,25 @@ const ContactForm = ({ handlerSubmit, handleChange }) => {
               />
             </div>
           )}
-
-          <input
-            type="text"
-            id="address-input"
-            name="address"
-            required
-            className="rounded-[60px] h-[42px] border-none flex appearance-none border border-gray-300 w-[87%] py-2 px-7 pb-[10px] bg-white text-gray-700 placeholder-gray-400 text-base focus:outline-none focus:ring-2 focus:ring-[#006191] focus:border-transparent"
-            placeholder="Dirección"
-            onChange={handleChange}
-          />
+          <div className="relative flex flex-col items-center w-full">
+            <input
+              type="text"
+              id="address-input"
+              name="address"
+              className="rounded-[60px] h-[42px] border-none flex appearance-none border border-gray-300 w-[87%] py-2 px-7 pb-[10px] bg-white text-gray-700 placeholder-gray-400 text-base focus:outline-none focus:ring-2 focus:ring-[#006191] focus:border-transparent"
+              placeholder={edit ? contact.address : "Dirección"}
+              onChange={handleChange}
+            />
+            <div className="absolute top-3 right-3 lg:top-10 lg:right-[5vh] transform -translate-y-0 pr-9 pointer-events-none">
+              <button className="0" onClick={handleDateType}>
+                <img
+                  className="w-[20px]"
+                  src="https://res.cloudinary.com/dkagy4g5m/image/upload/v1667407207/wyer/edit_home_itr62p.png"
+                  alt="edit_input_icon"
+                />
+              </button>
+            </div>
+          </div>
           <div className="relative flex flex-col items-center w-full">
             <select
               id="contactType-select"
@@ -104,7 +161,7 @@ const ContactForm = ({ handlerSubmit, handleChange }) => {
               onChange={handleChange}
             >
               <option value="" disabled selected>
-                Tipo
+                {edit ? contact.contactType : "Tipo"}
               </option>
               <option value="Cliente">Cliente</option>
               <option value="Socio">Socio</option>
@@ -119,14 +176,14 @@ const ContactForm = ({ handlerSubmit, handleChange }) => {
           </div>
           <div className="relative flex flex-col items-center w-full">
             <select
-              id="contactType-select"
-              name="contactType"
+              id="sex-select"
+              name="sex"
               required
               className="rounded-[60px] h-[42px] border-none flex appearance-none border border-gray-300 w-[87%] py-2 px-7 pb-[10px] bg-white text-gray-700 placeholder-gray-400 text-base focus:outline-none focus:ring-2 focus:ring-[#006191] focus:border-transparent"
               onChange={handleChange}
             >
-              <option className="text-gray-700" value="" disabled selected>
-                Sexo
+              <option value="" disabled selected>
+                {edit ? contact.sex : "Sexo"}
               </option>
               <option className="text-gray-700" value="Hombre">
                 Hombre

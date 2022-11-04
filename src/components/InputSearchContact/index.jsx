@@ -1,35 +1,35 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-undef */
 import React, { useState, useEffect } from "react";
-import { getClients } from "../../services/clients";
+import { getContacts } from "../../services/contacts";
 
-const InputSearchClient = (props) => {
-  const [clients, setClient] = useState();
+const InputSearchContact = (props) => {
+  const [contacts, setContacts] = useState();
   const [search, setSearch] = useState("");
   const searcherHandleChange = (e) => {
     setSearch(e.target.value);
   };
 
   useEffect(() => {
-    const fetchClient = async () => {
-      setClient(await getClients());
+    const fetchContacts= async () => {
+      setContacts(await getContacts());
     };
-    fetchClient();
+    fetchContacts();
   }, []);
 
   let results = [];
 
   useEffect(() => {
     if (!search) {
-      results = clients;
+      results = contacts;
       props.func(results);
     } else {
-      results = clients.filter(
-        (client) =>
-          client.name.toLowerCase().includes(search.toLocaleLowerCase()) ||
-          client.lastName.toLowerCase().includes(search.toLocaleLowerCase()) ||
-          client.name
-            .concat(client.lastName)
+      results = contacts.filter(
+        (contact) =>
+          contact.name.toLowerCase().includes(search.toLocaleLowerCase()) ||
+          contact.lastName.toLowerCase().includes(search.toLocaleLowerCase()) ||
+          contact.name
+            .concat(contact.lastName)
             .split(" ")
             .join("")
             .toLowerCase()
@@ -37,7 +37,7 @@ const InputSearchClient = (props) => {
       );
       props.func(results);
     }
-  }, [clients, search, setClient]);
+  }, [contacts, search, setContacts]);
 
   return (
     <>
@@ -77,4 +77,4 @@ const InputSearchClient = (props) => {
   );
 };
 
-export default InputSearchClient;
+export default InputSearchContact;

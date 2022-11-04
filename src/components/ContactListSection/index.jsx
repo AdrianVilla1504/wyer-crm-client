@@ -5,15 +5,15 @@ import { Link } from "react-router-dom";
 
 import ContactHomeCard from "../ContactHomeCard/";
 
-const ContacListSection = ({ clients }) => {
+const ContacListSection = ({ contacts }) => {
   return (
     <>
-      {clients ? (
+      {contacts ? (
         <div className="flex flex-col justify-center items-center pb-[16vh] lg:pb-[20vh]">
           <div className="w-[90vw] lg:w-[80vw] py-[20px] lg:mt-[4vh] container flex flex-col mx-auto items-center justify-center bg-[#F6F6F6] rounded-[33px]">
             <ul className="flex w-[74vw] lg:w-[74vw] flex-col divide divide-y-[3px] divide-white">
-              {clients?.map((client) => {
-                return <ContactHomeCard client={client} key={client._id} />;
+              {contacts?.map((contact) => {
+                return <ContactHomeCard contact={contact} key={contact._id} />;
               })}
             </ul>
           </div>
