@@ -9,7 +9,7 @@ export async function getClients() {
   }
 }
 
-export async function createCLients(clientForBody) {
+export async function createClients(clientForBody) {
   try {
       const options = {
         method: 'POST',
@@ -18,7 +18,9 @@ export async function createCLients(clientForBody) {
         },
         body: JSON.stringify(clientForBody),
       };
-      const response = await fetch(`${BASE_URL}/api/clients`, options);
+      console.log("This is the body to send")
+      console.table(clientForBody)
+      const response = await fetch(`${BASE_URL}/api/clients/`, options);
       return response.json();
 
   }  catch (error) {
