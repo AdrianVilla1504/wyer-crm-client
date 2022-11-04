@@ -1,10 +1,13 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { createClients } from "../../services/clients";
 
 import ContactForm from "../../components/ContactForm";
 import ContactFooter from "../../components/ContactFooter";
 
+
 const CreateNewContact = () => {
+  const navigate = useNavigate();
   const [clientForm, setClientForm] = useState({});
 
   const handleChange = (e) => {
@@ -16,6 +19,7 @@ const CreateNewContact = () => {
   const handlerSubmit = async (e) => {
     e.preventDefault();
     await createClients(clientForm);
+    navigate("/");
   };
 
   return (

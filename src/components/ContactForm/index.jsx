@@ -1,12 +1,13 @@
 import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const ContactForm = ({ handlerSubmit, handleChange }) => {
+
   const [inputDate, setInputDate] = useState(false);
 
   const handleDateType = (e) => {
     e.preventDefault();
     setInputDate(true);
-    console.log("ay mi madre el bicho", inputDate);
   };
 
   return (
@@ -27,7 +28,7 @@ const ContactForm = ({ handlerSubmit, handleChange }) => {
             id="lastName-input"
             name="lastName"
             required
-           className="rounded-[60px] h-[42px] border-none flex appearance-none border border-gray-300 w-[87%] py-2 px-7 pb-[10px] bg-white text-gray-700 placeholder-gray-400 text-base focus:outline-none focus:ring-2 focus:ring-[#006191] focus:border-transparent"
+            className="rounded-[60px] h-[42px] border-none flex appearance-none border border-gray-300 w-[87%] py-2 px-7 pb-[10px] bg-white text-gray-700 placeholder-gray-400 text-base focus:outline-none focus:ring-2 focus:ring-[#006191] focus:border-transparent"
             placeholder="Apellidos"
             onChange={handleChange}
           />
@@ -37,7 +38,7 @@ const ContactForm = ({ handlerSubmit, handleChange }) => {
             name="email"
             autocomplete="email"
             required
-           className="rounded-[60px] h-[42px] border-none flex appearance-none border border-gray-300 w-[87%] py-2 px-7 pb-[10px] bg-white text-gray-700 placeholder-gray-400 text-base focus:outline-none focus:ring-2 focus:ring-[#006191] focus:border-transparent"
+            className="rounded-[60px] h-[42px] border-none flex appearance-none border border-gray-300 w-[87%] py-2 px-7 pb-[10px] bg-white text-gray-700 placeholder-gray-400 text-base focus:outline-none focus:ring-2 focus:ring-[#006191] focus:border-transparent"
             placeholder="E-mail"
             onChange={handleChange}
           />
@@ -47,7 +48,7 @@ const ContactForm = ({ handlerSubmit, handleChange }) => {
             name="phone"
             autocomplete="email"
             required
-           className="rounded-[60px] h-[42px] border-none flex appearance-none border border-gray-300 w-[87%] py-2 px-7 pb-[10px] bg-white text-gray-700 placeholder-gray-400 text-base focus:outline-none focus:ring-2 focus:ring-[#006191] focus:border-transparent"
+            className="rounded-[60px] h-[42px] border-none flex appearance-none border border-gray-300 w-[87%] py-2 px-7 pb-[10px] bg-white text-gray-700 placeholder-gray-400 text-base focus:outline-none focus:ring-2 focus:ring-[#006191] focus:border-transparent"
             placeholder="Telefono"
             onChange={handleChange}
           />
@@ -57,18 +58,19 @@ const ContactForm = ({ handlerSubmit, handleChange }) => {
                 type="text"
                 id="birhday-input"
                 name="birthDate"
-                required
-               className="rounded-[60px] h-[42px] border-none flex appearance-none border border-gray-300 w-[87%] py-2 px-7 pb-[10px] bg-white text-gray-700 placeholder-gray-400 text-base focus:outline-none focus:ring-2 focus:ring-[#006191] focus:border-transparent"
+                className="rounded-[60px] h-[42px] border-none flex appearance-none border border-gray-300 w-[87%] py-2 px-7 pb-[10px] bg-white text-gray-700 placeholder-gray-400 text-base focus:outline-none focus:ring-2 focus:ring-[#006191] focus:border-transparent"
                 placeholder="Fecha de nacimiento"
                 onChange={handleChange}
                 onClick={handleDateType}
               />
               <div className="absolute top-3 right-3 lg:top-10 lg:right-[5vh] transform -translate-y-0 pr-9 pointer-events-none">
-                <img
-                  className="w-[20px]"
-                  src="https://res.cloudinary.com/dkagy4g5m/image/upload/v1667533027/wyer/calendar_icon_farwre.png"
-                  alt="calendar_input_icon"
-                />
+                <button className="0" onClick={handleDateType}>
+                  <img
+                    className="w-[20px]"
+                    src="https://res.cloudinary.com/dkagy4g5m/image/upload/v1667533027/wyer/calendar_icon_farwre.png"
+                    alt="calendar_input_icon"
+                  />
+                </button>
               </div>
             </div>
           ) : (
@@ -78,7 +80,7 @@ const ContactForm = ({ handlerSubmit, handleChange }) => {
                 id="birhday-input"
                 name="birthDate"
                 required
-               className="rounded-[60px] h-[42px] border-none flex appearance-none border border-gray-300 w-[87%] py-2 px-7 pb-[10px] bg-white text-gray-700 placeholder-gray-400 text-base focus:outline-none focus:ring-2 focus:ring-[#006191] focus:border-transparent"
+                className="rounded-[60px] h-[42px] border-none flex appearance-none border border-gray-300 w-[87%] py-2 px-7 pb-[10px] bg-white text-gray-700 placeholder-gray-400 text-base focus:outline-none focus:ring-2 focus:ring-[#006191] focus:border-transparent"
                 onChange={handleChange}
               />
             </div>
@@ -89,7 +91,7 @@ const ContactForm = ({ handlerSubmit, handleChange }) => {
             id="address-input"
             name="address"
             required
-           className="rounded-[60px] h-[42px] border-none flex appearance-none border border-gray-300 w-[87%] py-2 px-7 pb-[10px] bg-white text-gray-700 placeholder-gray-400 text-base focus:outline-none focus:ring-2 focus:ring-[#006191] focus:border-transparent"
+            className="rounded-[60px] h-[42px] border-none flex appearance-none border border-gray-300 w-[87%] py-2 px-7 pb-[10px] bg-white text-gray-700 placeholder-gray-400 text-base focus:outline-none focus:ring-2 focus:ring-[#006191] focus:border-transparent"
             placeholder="Dirección"
             onChange={handleChange}
           />
@@ -98,7 +100,7 @@ const ContactForm = ({ handlerSubmit, handleChange }) => {
               id="contactType-select"
               name="contactType"
               required
-             className="rounded-[60px] h-[42px] border-none flex appearance-none border border-gray-300 w-[87%] py-2 px-7 pb-[10px] bg-white text-gray-700 placeholder-gray-400 text-base focus:outline-none focus:ring-2 focus:ring-[#006191] focus:border-transparent"
+              className="rounded-[60px] h-[42px] border-none flex appearance-none border border-gray-300 w-[87%] py-2 px-7 pb-[10px] bg-white text-gray-700 placeholder-gray-400 text-base focus:outline-none focus:ring-2 focus:ring-[#006191] focus:border-transparent"
               onChange={handleChange}
             >
               <option value="" disabled selected>
@@ -120,7 +122,7 @@ const ContactForm = ({ handlerSubmit, handleChange }) => {
               id="contactType-select"
               name="contactType"
               required
-             className="rounded-[60px] h-[42px] border-none flex appearance-none border border-gray-300 w-[87%] py-2 px-7 pb-[10px] bg-white text-gray-700 placeholder-gray-400 text-base focus:outline-none focus:ring-2 focus:ring-[#006191] focus:border-transparent"
+              className="rounded-[60px] h-[42px] border-none flex appearance-none border border-gray-300 w-[87%] py-2 px-7 pb-[10px] bg-white text-gray-700 placeholder-gray-400 text-base focus:outline-none focus:ring-2 focus:ring-[#006191] focus:border-transparent"
               onChange={handleChange}
             >
               <option className="text-gray-700" value="" disabled selected>
@@ -146,9 +148,22 @@ const ContactForm = ({ handlerSubmit, handleChange }) => {
           </div>
         </div>
         <div className="flex flex-row justify-between w-[90vw] lg:w-[80vw]">
-          <button className="w-[43vw] h-[40px] my-[15px] bg-[#D1D1D1] hover:bg-blue-700   px-4 rounded-full text-white text-lg font-medium">Cancelar
-          </button>
-          <button className="w-[43vw] h-[40px] my-[15px] bg-[#64CD98] hover:bg-blue-700   px-4 rounded-full text-white text-lg font-medium" onSubmit={handlerSubmit}>Agregar
+          <Link to="/">
+            <button
+              name="cancel_button_back_home"
+              type="button"
+              className="w-[43vw] h-[40px] my-[15px] bg-[#D1D1D1] hover:bg-blue-700   px-4 rounded-full text-white text-lg font-medium"
+            >
+              Cancelar
+            </button>
+          </Link>
+          <button
+            name="submit_client_form_button"
+            type="submit"
+            className="w-[43vw] h-[40px] my-[15px] bg-[#64CD98] hover:bg-blue-700   px-4 rounded-full text-white text-lg font-medium"
+            onSubmit={handlerSubmit}
+          >
+            Agregar
           </button>
         </div>
       </form>
