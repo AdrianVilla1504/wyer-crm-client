@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from "react";
 import { getClients } from "../../services/clients";
 
-
 const InputSearchClient = (props) => {
   const [clients, setClient] = useState();
   const [search, setSearch] = useState("");
@@ -25,8 +24,16 @@ const InputSearchClient = (props) => {
       results = clients;
       props.func(results);
     } else {
-      results = clients.filter((client) =>
-        client.name.toLowerCase().includes(search.toLocaleLowerCase())
+      results = clients.filter(
+        (client) =>
+          client.name.toLowerCase().includes(search.toLocaleLowerCase()) ||
+          client.lastName.toLowerCase().includes(search.toLocaleLowerCase()) ||
+          client.name
+            .concat(client.lastName)
+            .split(" ")
+            .join("")
+            .toLowerCase()
+            .includes(search.split(" ").join("").toLowerCase())
       );
       props.func(results);
     }
