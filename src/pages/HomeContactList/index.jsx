@@ -20,8 +20,8 @@ const HomeContactList = () => {
       <div className="pt-[20vh] h-[100vh]">
         <ContacListSection contacts={renderContact} />
       </div>
-      <div className="fixed bottom-0 w-[100vw]">
-        <div className="bg-white  pt-[1vh]">
+      <div className="fixed bottom-0 w-[100vw] mt-[0px]">
+        <div className="bg-white  border-none pb-[1vh] pt-[2px]">
           <Link to="/CreateNewContact">
             <button className="inset-x-0 mx-auto flex flex-row justify-between items-center w-[37vw] h-[40px] my-[15px] bg-[#006191] hover:bg-blue-700  py-2 px-4 rounded-full">
               <span className="text-white text-lg font-medium">Agregar</span>

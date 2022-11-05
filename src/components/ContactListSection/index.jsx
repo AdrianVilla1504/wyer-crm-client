@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-expressions */
 import React from "react";
-import ContactHomeCard from "../ContactHomeCard/";
+import ContactHomeCard from "../ContactHomeCard"
 
-const ContacListSection = ({ contacts }) => {
+const ContactListSection = ({ contacts }) => {
   return (
     <>
       {contacts ? (
@@ -28,4 +28,4 @@ const ContacListSection = ({ contacts }) => {
   );
 };
 
-export default ContacListSection;
+export default ContactListSection;
