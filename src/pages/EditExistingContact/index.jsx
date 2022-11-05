@@ -17,7 +17,6 @@ const EditExistingContact = () => {
     setContactForm({ ...contactById, [e.target.name]: e.target.value });
   };
 
-  console.table(contactForm);
   useEffect(() => {
     const fetchContact = async () => {
       setContactById(await getContactById(id));

@@ -18,40 +18,44 @@ const ContactForm = ({ edit, contact, handlerSubmit, handleChange }) => {
               type="text"
               id="name-input"
               name="name"
-              required
+              required={!edit}
               className="rounded-[60px] h-[42px] border-none flex appearance-none border border-gray-300 w-[87%] py-2 px-7 pb-[10px] bg-white text-gray-700 placeholder-gray-400 text-base focus:outline-none focus:ring-2 focus:ring-[#006191] focus:border-transparent"
               placeholder={edit ? contact.name : "Nombre"}
               onChange={handleChange}
             />
-            <div className="absolute top-3 right-3 lg:top-10 lg:right-[5vh] transform -translate-y-0 pr-9 pointer-events-none">
-              <button className="0" onClick={handleDateType}>
-                <img
-                  className="w-[20px]"
-                  src="https://res.cloudinary.com/dkagy4g5m/image/upload/v1667407207/wyer/edit_home_itr62p.png"
-                  alt="edit_input_icon"
-                />
-              </button>
-            </div>
+            {edit ? (
+              <div className="absolute top-3 right-3 lg:top-10 lg:right-[5vh] transform -translate-y-0 pr-9 pointer-events-none">
+                <button className="0" onClick={handleDateType}>
+                  <img
+                    className="w-[20px]"
+                    src="https://res.cloudinary.com/dkagy4g5m/image/upload/v1667407207/wyer/edit_home_itr62p.png"
+                    alt="edit_input_icon"
+                  />
+                </button>
+              </div>
+            ) : null}
           </div>
           <div className="relative flex flex-col items-center w-full">
             <input
               type="text"
               id="lastName-input"
               name="lastName"
-              required
+              required={!edit}
               className="rounded-[60px] h-[42px] border-none flex appearance-none border border-gray-300 w-[87%] py-2 px-7 pb-[10px] bg-white text-gray-700 placeholder-gray-400 text-base focus:outline-none focus:ring-2 focus:ring-[#006191] focus:border-transparent"
               placeholder={edit ? contact.lastName : "Apellidos"}
               onChange={handleChange}
             />
-            <div className="absolute top-3 right-3 lg:top-10 lg:right-[5vh] transform -translate-y-0 pr-9 pointer-events-none">
-              <button className="0" onClick={handleDateType}>
-                <img
-                  className="w-[20px]"
-                  src="https://res.cloudinary.com/dkagy4g5m/image/upload/v1667407207/wyer/edit_home_itr62p.png"
-                  alt="edit_input_icon"
-                />
-              </button>
-            </div>
+            {edit ? (
+              <div className="absolute top-3 right-3 lg:top-10 lg:right-[5vh] transform -translate-y-0 pr-9 pointer-events-none">
+                <button className="0" onClick={handleDateType}>
+                  <img
+                    className="w-[20px]"
+                    src="https://res.cloudinary.com/dkagy4g5m/image/upload/v1667407207/wyer/edit_home_itr62p.png"
+                    alt="edit_input_icon"
+                  />
+                </button>
+              </div>
+            ) : null}
           </div>
           <div className="relative flex flex-col items-center w-full">
             <input
@@ -59,20 +63,22 @@ const ContactForm = ({ edit, contact, handlerSubmit, handleChange }) => {
               id="email-input"
               name="email"
               autocomplete="email"
-              required
+              required={!edit}
               className="rounded-[60px] h-[42px] border-none flex appearance-none border border-gray-300 w-[87%] py-2 px-7 pb-[10px] bg-white text-gray-700 placeholder-gray-400 text-base focus:outline-none focus:ring-2 focus:ring-[#006191] focus:border-transparent"
               placeholder={edit ? contact.email : "E-mail"}
               onChange={handleChange}
             />
-            <div className="absolute top-3 right-3 lg:top-10 lg:right-[5vh] transform -translate-y-0 pr-9 pointer-events-none">
-              <button className="0" onClick={handleDateType}>
-                <img
-                  className="w-[20px]"
-                  src="https://res.cloudinary.com/dkagy4g5m/image/upload/v1667407207/wyer/edit_home_itr62p.png"
-                  alt="edit_input_icon"
-                />
-              </button>
-            </div>
+            {edit ? (
+              <div className="absolute top-3 right-3 lg:top-10 lg:right-[5vh] transform -translate-y-0 pr-9 pointer-events-none">
+                <button className="0" onClick={handleDateType}>
+                  <img
+                    className="w-[20px]"
+                    src="https://res.cloudinary.com/dkagy4g5m/image/upload/v1667407207/wyer/edit_home_itr62p.png"
+                    alt="edit_input_icon"
+                  />
+                </button>
+              </div>
+            ) : null}
           </div>
           <div className="relative flex flex-col items-center w-full">
             <input
@@ -80,20 +86,22 @@ const ContactForm = ({ edit, contact, handlerSubmit, handleChange }) => {
               id="phone-input"
               name="phone"
               autocomplete="email"
-              required
+              required={!edit}
               className="rounded-[60px] h-[42px] border-none flex appearance-none border border-gray-300 w-[87%] py-2 px-7 pb-[10px] bg-white text-gray-700 placeholder-gray-400 text-base focus:outline-none focus:ring-2 focus:ring-[#006191] focus:border-transparent"
               placeholder={edit ? contact.phone : "Telefono"}
               onChange={handleChange}
             />
-            <div className="absolute top-3 right-3 lg:top-10 lg:right-[5vh] transform -translate-y-0 pr-9 pointer-events-none">
-              <button className="0" onClick={handleDateType}>
-                <img
-                  className="w-[20px]"
-                  src="https://res.cloudinary.com/dkagy4g5m/image/upload/v1667407207/wyer/edit_home_itr62p.png"
-                  alt="edit_input_icon"
-                />
-              </button>
-            </div>
+            {edit ? (
+              <div className="absolute top-3 right-3 lg:top-10 lg:right-[5vh] transform -translate-y-0 pr-9 pointer-events-none">
+                <button className="0" onClick={handleDateType}>
+                  <img
+                    className="w-[20px]"
+                    src="https://res.cloudinary.com/dkagy4g5m/image/upload/v1667407207/wyer/edit_home_itr62p.png"
+                    alt="edit_input_icon"
+                  />
+                </button>
+              </div>
+            ) : null}
           </div>
           {!inputDate ? (
             <div className="relative flex flex-col items-center w-full">
@@ -101,7 +109,7 @@ const ContactForm = ({ edit, contact, handlerSubmit, handleChange }) => {
                 type="text"
                 id="birhday-input"
                 name="birthDate"
-                required
+                required={!edit}
                 className="rounded-[60px] h-[42px] border-none flex appearance-none border border-gray-300 w-[87%] py-2 px-7 pb-[10px] bg-white text-gray-700 placeholder-gray-400 text-base focus:outline-none focus:ring-2 focus:ring-[#006191] focus:border-transparent"
                 placeholder={
                   edit
@@ -127,7 +135,7 @@ const ContactForm = ({ edit, contact, handlerSubmit, handleChange }) => {
                 type="date"
                 id="birhday-input"
                 name="birthDate"
-                required
+                required={!edit}
                 className="rounded-[60px] h-[42px] border-none flex appearance-none border border-gray-300 w-[87%] py-2 px-7 pb-[10px] bg-white text-gray-700 placeholder-gray-400 text-base focus:outline-none focus:ring-2 focus:ring-[#006191] focus:border-transparent"
                 onChange={handleChange}
               />
@@ -138,25 +146,28 @@ const ContactForm = ({ edit, contact, handlerSubmit, handleChange }) => {
               type="text"
               id="address-input"
               name="address"
+              required={!edit}
               className="rounded-[60px] h-[42px] border-none flex appearance-none border border-gray-300 w-[87%] py-2 px-7 pb-[10px] bg-white text-gray-700 placeholder-gray-400 text-base focus:outline-none focus:ring-2 focus:ring-[#006191] focus:border-transparent"
               placeholder={edit ? contact.address : "Dirección"}
               onChange={handleChange}
             />
-            <div className="absolute top-3 right-3 lg:top-10 lg:right-[5vh] transform -translate-y-0 pr-9 pointer-events-none">
-              <button className="0" onClick={handleDateType}>
-                <img
-                  className="w-[20px]"
-                  src="https://res.cloudinary.com/dkagy4g5m/image/upload/v1667407207/wyer/edit_home_itr62p.png"
-                  alt="edit_input_icon"
-                />
-              </button>
-            </div>
+            {edit ? (
+              <div className="absolute top-3 right-3 lg:top-10 lg:right-[5vh] transform -translate-y-0 pr-9 pointer-events-none">
+                <button className="0" onClick={handleDateType}>
+                  <img
+                    className="w-[20px]"
+                    src="https://res.cloudinary.com/dkagy4g5m/image/upload/v1667407207/wyer/edit_home_itr62p.png"
+                    alt="edit_input_icon"
+                  />
+                </button>
+              </div>
+            ) : null}
           </div>
           <div className="relative flex flex-col items-center w-full">
             <select
               id="contactType-select"
               name="contactType"
-              required
+              required={!edit}
               className="rounded-[60px] h-[42px] border-none flex appearance-none border border-gray-300 w-[87%] py-2 px-7 pb-[10px] bg-white text-gray-700 placeholder-gray-400 text-base focus:outline-none focus:ring-2 focus:ring-[#006191] focus:border-transparent"
               onChange={handleChange}
             >
@@ -178,7 +189,7 @@ const ContactForm = ({ edit, contact, handlerSubmit, handleChange }) => {
             <select
               id="sex-select"
               name="sex"
-              required
+              required={!edit}
               className="rounded-[60px] h-[42px] border-none flex appearance-none border border-gray-300 w-[87%] py-2 px-7 pb-[10px] bg-white text-gray-700 placeholder-gray-400 text-base focus:outline-none focus:ring-2 focus:ring-[#006191] focus:border-transparent"
               onChange={handleChange}
             >

@@ -5,7 +5,6 @@ import { createContacts } from "../../services/contacts";
 import ContactForm from "../../components/ContactForm";
 import ContactFooter from "../../components/ContactFooter";
 
-
 const CreateNewContact = () => {
   const navigate = useNavigate();
   const [contactForm, setContactForm] = useState({});
@@ -19,6 +18,7 @@ const CreateNewContact = () => {
   const handlerSubmit = async (e) => {
     e.preventDefault();
     await createContacts(contactForm);
+
     navigate("/");
   };
 
