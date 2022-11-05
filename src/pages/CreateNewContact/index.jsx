@@ -1,24 +1,24 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { createClients } from "../../services/clients";
+import { createContacts } from "../../services/contacts";
 
 import ContactForm from "../../components/ContactForm";
 import ContactFooter from "../../components/ContactFooter";
 
-
 const CreateNewContact = () => {
   const navigate = useNavigate();
-  const [clientForm, setClientForm] = useState({});
+  const [contactForm, setContactForm] = useState({});
 
   const handleChange = (e) => {
-    setClientForm({ ...clientForm, [e.target.name]: e.target.value });
+    setContactForm({ ...contactForm, [e.target.name]: e.target.value });
   };
 
-  console.table(clientForm);
+  console.table(contactForm);
 
   const handlerSubmit = async (e) => {
     e.preventDefault();
-    await createClients(clientForm);
+    await createContacts(contactForm);
+
     navigate("/");
   };
 
