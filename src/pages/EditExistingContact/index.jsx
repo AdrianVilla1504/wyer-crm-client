@@ -33,8 +33,8 @@ const EditExistingContact = () => {
 
   return (
     <div>
-      <div className="flex flex-col h-[100vh] justify-center items-center pb-[16vh] lg:pb-[20vh]">
-        <div className="ml-[-120px] py-[10px] flex-start">
+      <div className="flex flex-col h-[100vh] lg:h-[140vh] justify-center items-center pb-[16vh] lg:pb-[20vh]">
+        <div className="ml-[-120px] lg:ml-[-550px] py-[10px] flex-start">
           <span className="font-semibold text-[#006191]">Editar Contacto</span>
         </div>
         <ContactForm

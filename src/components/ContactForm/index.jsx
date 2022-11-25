@@ -12,7 +12,7 @@ const ContactForm = ({ edit, contact, handlerSubmit, handleChange }) => {
   return (
     <div>
       <form action="#" method="POST" onSubmit={handlerSubmit}>
-        <div className="w-[90vw] lg:w-[80vw] h-[67vh] py-[20px] lg:mt-[4vh] container flex flex-col mx-auto items-center justify-between bg-[#F6F6F6] rounded-[33px] relative">
+        <div className="w-[90vw] h-[67vh] py-[20px] lg:w-[80vw] lg:h-[90vh] lg:mt-[4vh] container flex flex-col mx-auto items-center justify-between bg-[#F6F6F6] rounded-[33px] relative">
           <div className="relative flex flex-col items-center w-full">
             <input
               type="text"
@@ -24,7 +24,7 @@ const ContactForm = ({ edit, contact, handlerSubmit, handleChange }) => {
               onChange={handleChange}
             />
             {edit ? (
-              <div className="absolute top-3 right-3 lg:top-10 lg:right-[5vh] transform -translate-y-0 pr-9 pointer-events-none">
+              <div className="absolute top-3 right-3 lg:top-3 lg:right-[7vh] transform -translate-y-0 pr-9 pointer-events-none">
                 <button className="0" onClick={handleDateType}>
                   <img
                     className="w-[20px]"
@@ -46,7 +46,7 @@ const ContactForm = ({ edit, contact, handlerSubmit, handleChange }) => {
               onChange={handleChange}
             />
             {edit ? (
-              <div className="absolute top-3 right-3 lg:top-10 lg:right-[5vh] transform -translate-y-0 pr-9 pointer-events-none">
+              <div className="absolute top-3 right-3 lg:top-3 lg:right-[7vh] transform -translate-y-0 pr-9 pointer-events-none">
                 <button className="0" onClick={handleDateType}>
                   <img
                     className="w-[20px]"
@@ -69,7 +69,7 @@ const ContactForm = ({ edit, contact, handlerSubmit, handleChange }) => {
               onChange={handleChange}
             />
             {edit ? (
-              <div className="absolute top-3 right-3 lg:top-10 lg:right-[5vh] transform -translate-y-0 pr-9 pointer-events-none">
+              <div className="absolute top-3 right-3 lg:top-3 lg:right-[7vh] transform -translate-y-0 pr-9 pointer-events-none">
                 <button className="0" onClick={handleDateType}>
                   <img
                     className="w-[20px]"
@@ -92,7 +92,7 @@ const ContactForm = ({ edit, contact, handlerSubmit, handleChange }) => {
               onChange={handleChange}
             />
             {edit ? (
-              <div className="absolute top-3 right-3 lg:top-10 lg:right-[5vh] transform -translate-y-0 pr-9 pointer-events-none">
+              <div className="absolute top-3 right-3 lg:top-3 lg:right-[7vh] transform -translate-y-0 pr-9 pointer-events-none">
                 <button className="0" onClick={handleDateType}>
                   <img
                     className="w-[20px]"
@@ -119,7 +119,7 @@ const ContactForm = ({ edit, contact, handlerSubmit, handleChange }) => {
                 onChange={handleChange}
                 onClick={handleDateType}
               />
-              <div className="absolute top-3 right-3 lg:top-10 lg:right-[5vh] transform -translate-y-0 pr-9 pointer-events-none">
+              <div className="absolute top-3 right-3 lg:top-3 lg:right-[7vh] transform -translate-y-0 pr-9 pointer-events-none">
                 <button className="0" onClick={handleDateType}>
                   <img
                     className="w-[20px]"
@@ -152,7 +152,7 @@ const ContactForm = ({ edit, contact, handlerSubmit, handleChange }) => {
               onChange={handleChange}
             />
             {edit ? (
-              <div className="absolute top-3 right-3 lg:top-10 lg:right-[5vh] transform -translate-y-0 pr-9 pointer-events-none">
+              <div className="absolute top-3 right-3 lg:top-3 lg:right-[7vh] transform -translate-y-0 pr-9 pointer-events-none">
                 <button className="0" onClick={handleDateType}>
                   <img
                     className="w-[20px]"
@@ -177,7 +177,7 @@ const ContactForm = ({ edit, contact, handlerSubmit, handleChange }) => {
               <option value="Cliente">Cliente</option>
               <option value="Socio">Socio</option>
             </select>
-            <div className="absolute top-3 right-3 lg:top-10 lg:right-[5vh] transform -translate-y-0 pr-9 pointer-events-none">
+            <div className="absolute top-3 right-3 lg:top-3 lg:right-[7vh] transform -translate-y-0 pr-9 pointer-events-none">
               <img
                 className="w-[20px]"
                 src="https://res.cloudinary.com/dkagy4g5m/image/upload/v1667532919/wyer/select_tag_arrow_grbqce.png"
@@ -206,7 +206,7 @@ const ContactForm = ({ edit, contact, handlerSubmit, handleChange }) => {
                 No Binario
               </option>
             </select>
-            <div className="absolute top-3 right-3 lg:top-10 lg:right-[5vh] transform -translate-y-0 pr-9 pointer-events-none">
+            <div className="absolute top-3 right-3 lg:top-3 lg:right-[7vh] transform -translate-y-0 pr-9 pointer-events-none">
               <img
                 className="w-[20px]"
                 src="https://res.cloudinary.com/dkagy4g5m/image/upload/v1667532919/wyer/select_tag_arrow_grbqce.png"
@@ -220,7 +220,7 @@ const ContactForm = ({ edit, contact, handlerSubmit, handleChange }) => {
             <button
               name="cancel_button_back_home"
               type="button"
-              className="w-[43vw] h-[40px] my-[15px] bg-[#D1D1D1] hover:bg-blue-700   px-4 rounded-full text-white text-lg font-medium"
+              className="w-[43vw] h-[40px] lg:w-[70vh] my-[15px] bg-[#D1D1D1] hover:bg-blue-700   px-4 rounded-full text-white text-lg font-medium"
             >
               Cancelar
             </button>
@@ -228,7 +228,7 @@ const ContactForm = ({ edit, contact, handlerSubmit, handleChange }) => {
           <button
             name="submit_client_form_button"
             type="submit"
-            className="w-[43vw] h-[40px] my-[15px] bg-[#64CD98] hover:bg-blue-700   px-4 rounded-full text-white text-lg font-medium"
+            className="w-[43vw] h-[40px] lg:w-[70vh] my-[15px] bg-[#64CD98] hover:bg-blue-700   px-4 rounded-full text-white text-lg font-medium"
             onSubmit={handlerSubmit}
           >
             Agregar
