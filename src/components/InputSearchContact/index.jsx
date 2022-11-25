@@ -50,7 +50,7 @@ const InputSearchContact = (props) => {
           value={search}
           onChange={searcherHandleChange}
         />
-        <div className="absolute top-11 right-3 lg:top-10 lg:right-[5vh] transform -translate-y-0 pr-3 pointer-events-none">
+        <div className="absolute top-11 right-3 lg:top-8 lg:right-[5vh] transform -translate-y-0 pr-3 pointer-events-none">
           <svg
             aria-hidden="true"
             className="w-5 h-5 text-[#006192]"
