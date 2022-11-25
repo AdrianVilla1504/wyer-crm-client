@@ -6,7 +6,7 @@ const ContactListSection = ({ contacts }) => {
   return (
     <>
       {contacts ? (
-        <div className="flex flex-col justify-center items-center pb-[25vh] lg:pb-[20vh]">
+        <div className="flex flex-col justify-center items-center pb-[25vh] lg:pb-[33vh]">
           <div className="w-[90vw] lg:w-[80vw] py-[20px] lg:mt-[4vh] container flex flex-col mx-auto items-center justify-center bg-[#F6F6F6] rounded-[33px]">
             <ul className="flex w-[74vw] lg:w-[74vw] flex-col divide divide-y-[3px] divide-white">
               {contacts?.map((contact) => {
